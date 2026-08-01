@@ -541,7 +541,7 @@ int main(){
 // }
 
 // matrix multiplication
-#include<iostream>
+/*#include<iostream>
 using namespace std;
 int main(){
     int arr1[2][3];
@@ -584,5 +584,97 @@ int main(){
         cout<<endl;
     }
 
+    return 0;
+}*/
+
+// Spiral matrix
+/*#include<iostream>
+using namespace std;
+
+int main() {
+    int matrix[4][4];
+    int rows = 4;
+    int column = 4;
+
+    cout << "Enter the array:\n";
+    for(int i = 0; i < rows; i++) {
+        for(int j = 0; j < column; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+
+    int top = 0;
+    int bottom = rows - 1;
+    int left = 0;
+    int right = column - 1;
+
+    while(top <= bottom && left <= right) {
+
+        // Top Row
+        for(int i = left; i <= right; i++) {
+            cout << matrix[top][i] << " ";
+        }
+        top++;
+
+        // Right Column
+        for(int i = top; i <= bottom; i++) {
+            cout << matrix[i][right] << " ";
+        }
+        right--;
+
+        // Bottom Row
+        for(int i = right; i >= left; i--) {
+            cout << matrix[bottom][i] << " ";
+        }
+        bottom--;
+
+        // Left Column
+        for(int i = bottom; i >= top; i--) {
+            cout << matrix[i][left] << " ";
+        }
+        left++;
+    }
+
+    return 0;
+}*/
+
+///Rotate matrix by 90 degree
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main(){
+    int matrix[3][3];
+    int rows=3;
+    int columns=3;
+    cout<<"enter the array:";
+
+    for(int i=0 ; i<rows;i++){
+        for(int j=0; j<columns;j++){
+            cin>>matrix[i][j];
+        }
+    }
+
+    // tramspose
+    for(int i=0;i<rows;i++){                           //
+        for(int j=i+1;j<columns;j++){
+            swap(matrix[i][j],matrix[j][i]);
+        }
+    }
+    // reverse
+    for(int i=0;i<rows;i++){
+    int right=columns-1;
+    int left=0;
+    while(left<right){
+        swap(matrix[i][left],matrix[i][right]);
+        left++;
+        right--;
+         }
+    }
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<columns;j++){
+            cout<<matrix[i][j]<<" ";
+        }
+        cout<<endl;
+    }
     return 0;
 }
