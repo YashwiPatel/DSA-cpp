@@ -295,7 +295,7 @@ using namespace std;
  }*/
 
 // Sum of Two Arrays
-#include<iostream>
+/*#include<iostream>
 using namespace std;
 int main(){
     int arr1[5];
@@ -318,4 +318,38 @@ int main(){
     }
     return 0;
 
+}*/
+// binary seach
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int arr[9];
+    cout << "Enter the sorted array: ";
+    for(int i = 0; i < 9; i++){
+        cin >> arr[i];
+    }
+    int element;
+    cout << "Enter the element to search: ";
+    cin >> element;
+    int left = 0;
+    int right = 8;
+    while(left <= right){
+        int mid = (left + right) / 2;
+        if(arr[mid] == element){
+            cout << "Element Found at index " << mid;
+            return 0;
+        }
+        else if(element > arr[mid]){
+            left = mid + 1;
+        }
+        else{
+            right = mid - 1;
+        }
+    }
+
+    cout << "Element Not Found";
+
+    return 0;
 }

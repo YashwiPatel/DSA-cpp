@@ -639,7 +639,7 @@ int main() {
 }*/
 
 ///Rotate matrix by 90 degree
-#include<iostream>
+/*#include<iostream>
 #include<algorithm>
 using namespace std;
 int main(){
@@ -677,4 +677,51 @@ int main(){
         cout<<endl;
     }
     return 0;
-}
+}*/
+
+// binary search
+#include<iostream>
+using namespace std;
+int main(){
+    int matrix[3][3];
+    int rows=3;
+    int columns=3;
+    
+    cout<<"enter the array:";
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<columns;j++){
+            cin>>matrix[i][j];
+        }
+    }
+    int element;
+    cout<<"enter the element that you want to search";
+    cin>>element;
+    for(int i=0;i<rows;i++){
+    for(int j=0;j<columns;j++){
+        int left= rows-1;
+        int right=0;
+        int middle=(left+right)/2;};
+        if(matrix[i][j]>middle){
+            for(int i=middle;i<=right;i++){
+                if(element==matrix[i][j]){
+                    cout<<"element found: "<<element;
+                }
+            }
+            }
+        }
+        else if(matrix[i][j]<middle){
+            for(int i= middle;i<=left;i++){
+                if(element == martix[i][j]){
+                    cout<<"element found:"<<element;
+                }
+            }
+        }
+        else if( matrix[i][j]==middle){
+            cout<<"element found: "<<element;
+        }
+        else{
+            cout<<"Element not found";
+        }
+        return 0;
+    }
+
