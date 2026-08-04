@@ -682,46 +682,38 @@ int main(){
 // binary search
 #include<iostream>
 using namespace std;
-int main(){
+
+int main()
+{
     int matrix[3][3];
-    int rows=3;
-    int columns=3;
-    
-    cout<<"enter the array:";
-    for(int i=0;i<rows;i++){
-        for(int j=0;j<columns;j++){
+    cout << "Enter the sorted matrix:\n";
+    for(int i = 0; i < 3; i++) {
+        for(int j=0; j<3; j++) {
             cin>>matrix[i][j];
         }
     }
     int element;
-    cout<<"enter the element that you want to search";
+    cout<<"Enter the element to search: ";
     cin>>element;
-    for(int i=0;i<rows;i++){
-    for(int j=0;j<columns;j++){
-        int left= rows-1;
-        int right=0;
-        int middle=(left+right)/2;};
-        if(matrix[i][j]>middle){
-            for(int i=middle;i<=right;i++){
-                if(element==matrix[i][j]){
-                    cout<<"element found: "<<element;
-                }
-            }
-            }
+    int rows= 3;
+    int cols= 3;
+    int left= 0;
+    int right= rows*cols-1;
+    while(left<=right){
+        int mid =(left+right) / 2;
+        int row=mid/cols;
+        int col=mid%cols;
+        if(matrix[row][col]==element){
+            cout<<"Element found at (" << row << ", " << col << ")";
+            return 0;
         }
-        else if(matrix[i][j]<middle){
-            for(int i= middle;i<=left;i++){
-                if(element == martix[i][j]){
-                    cout<<"element found:"<<element;
-                }
-            }
-        }
-        else if( matrix[i][j]==middle){
-            cout<<"element found: "<<element;
+        else if(element>matrix[row][col]){
+            left=mid+1;
         }
         else{
-            cout<<"Element not found";
+            right=mid-1;
         }
-        return 0;
     }
-
+    cout<<"Element not found.";
+    return 0;
+}

@@ -348,8 +348,6 @@ int main()
             right = mid - 1;
         }
     }
-
     cout << "Element Not Found";
-
     return 0;
 }
