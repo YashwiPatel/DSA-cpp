@@ -680,7 +680,7 @@ int main(){
 }*/
 
 // binary search
-#include<iostream>
+/*#include<iostream>
 using namespace std;
 
 int main()
@@ -715,5 +715,100 @@ int main()
         }
     }
     cout<<"Element not found.";
+    return 0;
+}*/
+// 90 anticlockwise degree rotation
+/*#include<iostream>
+#include<algorithm>
+using namespace std;
+
+int main(){
+    int matrix[3][3];
+    int rows=3;
+    int columns=3;
+
+    cout<<"enter the array:"<<endl;
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<columns;j++){
+            cin>>matrix[i][j];
+        }
+    }
+    // transpose
+    for(int i=0;i<rows;i++){
+        for(int j=i+1;j<columns;j++){
+            swap(matrix[i][j],matrix[j][i]);
+        }
+    }
+    // reverse the order of rows
+    int top=0;
+    int bottom=rows-1;
+    while(top<bottom){
+        for(int j=0;j<columns;j++){
+            swap(matrix[top][j],matrix[bottom][j]);
+        }
+        top++;
+        bottom--;
+    }
+
+    // print matrix
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<columns;j++){
+            cout<<matrix[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+
+    return 0;
+}*/
+//zeros
+#include<iostream>
+using namespace std;
+
+int main(){
+    int matrix[3][3];
+    int rows=3;
+    int columns=3;
+
+    cout<<"enter the array:"<<endl;
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<columns;j++){
+            cin>>matrix[i][j];
+        }
+    }
+    
+    int zerorow[3]={0};
+    int zerocolumn[3]={0};
+    // find the original zeroes
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<columns;j++){
+            if(matrix[i][j]==0){
+                zerorow[i]=1;
+                zerocolumn[j]=1;
+            }
+        }
+    }
+    // make rows zero
+    for(int i=0;i<rows;i++){
+        if(zerorow[i]==1){
+            for(int j=0;j<columns;j++){
+                matrix[i][j]=0;
+            }
+        }
+    }
+    // make columns zero
+    for(int j=0;j<columns;j++){
+        if(zerocolumn[j]==1){
+            for(int i=0;i<rows;i++){
+                matrix[i][j]=0;
+            }
+        }
+    }
+    // print matrix
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<columns;j++){
+            cout<<matrix[i][j]<<" ";
+        }
+        cout<<endl;
+    }
     return 0;
 }
