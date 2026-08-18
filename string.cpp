@@ -138,7 +138,7 @@ int main(){
     return 0;
 }*/
 // palidrome or not
-#include <iostream>
+/*#include <iostream>
 #include <string>
 using namespace std;
 int main() {
@@ -164,5 +164,55 @@ int main() {
     else
         cout<<"Not a palindrome";
 
+    return 0;
+}*/
+// array of strings
+/*#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string names[5];
+    for(int i=0;i<5;i++){
+        getline(cin,names[i]);
+    }
+    for(int i=0;i<5;i++){
+        cout<<names[i]<<" ";
+    }
+    return 0;
+}*/
+
+// check no of vowels ,consonants and space
+#include<iostream>
+#include<string>
+#include<cctype>
+using namespace std;
+int main(){
+    string str;
+    cout<<"enter the string";
+    getline(cin,str);
+    int vowels=0;
+    int consonants=0;
+    int digit=0;
+    int space=0;
+
+    for(int i=0;i<str.length();i++){
+        if(str[i]=='a'|| str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u'){
+            vowels++;
+        }
+        else if(str[i]>='0'&&str[i]<='9'){
+            digit++;
+        }
+        else if(str[i]==' '){
+            space++;
+        }
+        else{
+            consonants++;
+        }
+    }
+    cout<<"vowels"<<vowels<<endl;
+    cout<<"consonants"<<consonants<<endl;
+    cout<<"space"<<space<<endl;
+    cout<<"digit"<<digit<<endl;
+    
     return 0;
 }
