@@ -182,7 +182,7 @@ int main(){
 }*/
 
 // check no of vowels ,consonants and space
-#include<iostream>
+/*#include<iostream>
 #include<string>
 #include<cctype>
 using namespace std;
@@ -214,5 +214,34 @@ int main(){
     cout<<"space"<<space<<endl;
     cout<<"digit"<<digit<<endl;
     
+    return 0;
+}*/
+
+//
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string str;
+    cout << "Enter a string: ";
+    getline(cin, str);
+
+    string result = "";
+
+    for (int i=0; i<str.length(); i++) {
+        bool alreadyPresent = false;
+
+        for (int j=0;j<result.length(); j++) {
+            if (str[i]==result[j]) {
+                alreadyPresent = true;
+                break;
+            }
+        }
+        if(!alreadyPresent) {
+            result+=str[i];
+        }
+    }
+    cout << "String after removing duplicates: " << result;
     return 0;
 }
