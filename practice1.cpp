@@ -130,7 +130,7 @@ int main(){
     return 0;
 }*/
 // 90 degree rotate
-#include<iostream>
+/*#include<iostream>
 #include<algorithm>
 using namespace std;
 int main(){
@@ -160,8 +160,10 @@ int main(){
     }
     for(int i=0;i<rows;i++){
         for(int j=0;j<column;j++){
-            cout<<arr[i][j];
+            cout<<arr[i][j]<<' ';
         }
     }
     return 0;
-}
+}*/
+
+// reapting letters 
