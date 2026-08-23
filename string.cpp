@@ -218,7 +218,7 @@ int main(){
 }*/
 
 //
-#include <iostream>
+/*#include <iostream>
 #include <string>
 using namespace std;
 
@@ -243,5 +243,96 @@ int main() {
         }
     }
     cout << "String after removing duplicates: " << result;
+    return 0;
+}*/
+
+// first non repeating character
+/*#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string str;
+    cout<<"enter the string: ";
+    getline(cin,str);
+
+    for(int i=0;i<str.length();i++){        // value of i will remain fixed untill the inner loop travels through every elemnt and then outerloops value will get increment than repeat till every elemnt  
+        int count=0;                
+        for(int j=0;j<str.length();j++){
+            if(str[i]==str[j]){
+                count++;
+            }
+        }
+        if(count==1){
+            cout<<"first non repeating char "<<str[i];
+            break;
+        }
+    }      
+    return 0;
+}*/
+
+// first repeating char
+/*#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string str;
+    cout<<"enter the string :";
+    getline(cin,str);
+
+    for(int i=0;i<str.length();i++){
+        int count=0;
+        for(int j=0;j<str.length();j++){
+            if(str[i]==str[j]){
+                count++;
+            }
+        }
+        if(count>1){
+            cout<<"first repeating letter is: "<<str[i];
+            break;
+        }
+    }
+    return 0;
+}*/
+
+//two strings are anagrams(check if they contain the same char and same frequency)
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string str1;
+    cout<<"enter the first value: ";
+    getline(cin,str1);
+
+    string str2;
+    cout<<"enter the string ";
+    getline(cin,str2);
+
+    bool anagram=true;
+
+    for(int i=0;i<str1.length();i++){
+        int count1=0;
+        int count2=0;
+        
+        for(int j=0;j<str1.length();j++){
+            if(str1[i]==str1[j]){
+                count1++;
+            }
+        }
+
+        for(int j=0;j<str2.length();j++){
+            if(str2[i]==str2[j]){
+                count2++;
+            }
+        }
+
+        if(count1!=count2){
+            anagram=false;
+            break;
+        }
+        else{
+            anagram=true;
+        }
+    }
+    if(anagram){cout<<"Anagram";}
     return 0;
 }
