@@ -295,7 +295,7 @@ int main(){
 }*/
 
 //two strings are anagrams(check if they contain the same char and same frequency)
-#include<iostream>
+/*#include<iostream>
 #include<string>
 using namespace std;
 int main(){
@@ -334,5 +334,106 @@ int main(){
         }
     }
     if(anagram){cout<<"Anagram";}
+    return 0;
+}*/
+
+// most frequent char
+/*#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string str;
+    cout<<"enter the string: ";
+    getline(cin,str);
+    int maxcount=0;
+    char maxchar;
+
+    for(int i=0;i<str.length();i++){
+        int count=0;
+        
+        for(int j=0;j<str.length();j++){
+            if(str[i]==str[j]){
+                count++;
+            }
+        }
+        if(count>maxcount){
+            maxcount=count;
+            maxchar=str[i];
+        }
+    }
+    cout<<"max frequent char is : "<<maxchar;
+    return 0;
+}*/
+/*#include<iostream>
+#include<string>
+#include<algorithm>
+using namespace std;
+
+int main(){
+    string str;
+    string goal;
+    cout<<"enter the string: ";
+    getline(cin,str);
+    cout<<"enter the goal: ";
+    getline(cin,goal);
+
+    int length_str=str.length();
+    int length_goal=goal.length();
+    bool goal_achieved=false;
+
+    if(length_str!=length_goal){
+        cout<<"Not a rotation";
+        return 0;
+    }
+
+    for(int i=0;i<length_str;i++){
+        rotate(str.begin(),str.begin()+1,str.end());
+        if(str==goal){
+            goal_achieved=true;
+            break;
+        }
+    }
+
+    if(goal_achieved){
+        cout << "Strings are rotations";
+    }
+    else{
+        cout << "Strings are not rotations";
+    }
+
+    return 0;
+}*/
+//find how many times a particular word occurs in the string.
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+    string str;
+    string goal;
+
+    cout<<"Enter the string: ";
+    getline(cin,str);
+
+    cout<<"Enter the goal: ";
+    getline(cin, goal);
+
+    int count=0;
+    int start=0;
+
+    while (start<str.length()) {
+
+        int pos=str.find(' ',start);
+
+        if (pos==string::npos) {
+            pos=str.length();
+        }
+        string word=str.substr(start, pos-start);
+        if (word==goal) {
+            count++;
+        }
+        start=pos+1;
+    }
+
+    cout << "Total count is: " << count;
     return 0;
 }
