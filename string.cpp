@@ -364,6 +364,7 @@ int main(){
     cout<<"max frequent char is : "<<maxchar;
     return 0;
 }*/
+// string rotation
 /*#include<iostream>
 #include<string>
 #include<algorithm>
@@ -372,8 +373,10 @@ using namespace std;
 int main(){
     string str;
     string goal;
+
     cout<<"enter the string: ";
     getline(cin,str);
+
     cout<<"enter the goal: ";
     getline(cin,goal);
 
@@ -404,7 +407,7 @@ int main(){
     return 0;
 }*/
 //find how many times a particular word occurs in the string.
-#include <iostream>
+/*#include <iostream>
 #include <string>
 using namespace std;
 int main() {
@@ -435,5 +438,106 @@ int main() {
     }
 
     cout << "Total count is: " << count;
+    return 0;
+}*/
+
+// remove the goiven goal
+
+/*#include<iostream>
+#include<string>
+using namespace  std;
+int main(){
+    string str;
+    string goal;
+
+    cout<<"enter the string: ";
+    getline(cin,str);
+
+    cout<<"enter the goal: ";
+    getline(cin,goal);
+
+    int start = 0;
+
+    while(start<str.length()){
+        int pos=str.find(goal,start);          // finds space 
+         if(pos==string::npos){               // if string is not found
+            break;
+         }
+          str.erase(pos, goal.length());       // removes the string
+    }
+    cout<<"string after removing: "<<str<<endl;
+    return 0;
+}*/
+
+// replacing a substring
+/*#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string str;
+    string goal;
+    string replace;
+
+    cout<<"enter the string: ";
+    getline(cin,str);
+
+    cout<<"enter the goal";
+    getline(cin,goal);
+
+    cout<<"enter the replace: ";
+    getline(cin,replace);
+
+    int start=0;
+
+    while(start<str.length()){
+
+        int pos=str.find(goal,start);
+
+        if(pos==string::npos){
+            break;
+        }
+        str.erase(pos,goal.length());
+        str.insert(pos,replace);
+    }
+    cout<<"the new string is "<<str<<endl;
+    return 0;
+}*/
+
+// string comperession
+/*#include<iostream>
+        #include<string>
+    using namespace std;
+    int main(){
+        string str;
+        cout<<"enter the string ";
+        getline(cin,str);
+
+        for(int i=0;i<str.length();i++){
+            int count = 1;
+            
+            while(i+1 < str.length() && str[i]==str[i+1]){              // checks the next elemt exist and is it equal to i
+                count++;
+                i++;
+            }
+            cout<<str[i]<<count;
+        }
+        return 0;
+}*/
+
+// remove consecutive duplicate
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string str;
+    cout<<"enter the string: ";
+    getline(cin,str);
+
+    for(int i=0;i<str.length();i++){
+        while(i+1<str.length() && str[i]==str[i+1]){
+            str.erase(i+1,1);
+        }
+    }
+    cout<<str;
     return 0;
 }
