@@ -525,7 +525,7 @@ int main(){
 }*/
 
 // remove consecutive duplicate
-#include<iostream>
+/*#include<iostream>
 #include<string>
 using namespace std;
 int main(){
@@ -539,5 +539,42 @@ int main(){
         }
     }
     cout<<str;
+    return 0;
+}*/
+
+// remove all space
+/*#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string str;
+    cout<<"enter the string: ";
+    getline(cin,str);
+
+    for(int i=0;i<str.length();i++){
+        if(str[i]==' '){
+            str.erase(i,1);
+            i--;
+        }
+    }
+    cout<<str<<endl;
+    return 0;
+}*/
+// remove duplicate character
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string str;
+    cout<<"enter the string : ";
+    getline(cin,str);
+
+    for(int i=0;i<str.length()-1;i++){
+        if(str[i]==str[i+1]){
+            str.erase(i,1);
+            i--;
+        }
+    }
+    cout<<str<<endl;
     return 0;
 }
