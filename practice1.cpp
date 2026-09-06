@@ -165,5 +165,52 @@ int main(){
     }
     return 0;
 }*/
+// remove duplicate the character
+/*#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string str;
+    cout<<"enter the string";
+    getline(cin,str);
 
-// reapting letters 
+    string result;
+
+    for(int i=0;i<str.length();i++){
+        bool alreadypresent=false;
+    
+    for(int j=0;j<result.length();j++){
+        if(str[i]==result[j]){
+           alreadypresent=true;
+           break;
+        }
+    }
+    if(!alreadypresent){
+        result+=str[i];
+    }
+  }
+  cout<<"the string is :"<<result;
+  return 0;
+}*/
+
+// string practice
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main(){
+    string str;
+    cout<<"enter the string: ";
+    cin>>str;
+    int first=0;
+    int last=str.length()-1;
+    
+    while(first<last){
+        swap(str[first],str[last]);
+        first++;
+        last--;
+
+    }
+    cout<<str;
+    return 0;
+}
+
