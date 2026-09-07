@@ -295,48 +295,6 @@ int main(){
 }*/
 
 //two strings are anagrams(check if they contain the same char and same frequency)
-/*#include<iostream>
-#include<string>
-using namespace std;
-int main(){
-    string str1;
-    cout<<"enter the first value: ";
-    getline(cin,str1);
-
-    string str2;
-    cout<<"enter the string ";
-    getline(cin,str2);
-
-    bool anagram=true;
-
-    for(int i=0;i<str1.length();i++){
-        int count1=0;
-        int count2=0;
-        
-        for(int j=0;j<str1.length();j++){
-            if(str1[i]==str1[j]){
-                count1++;
-            }
-        }
-
-        for(int j=0;j<str2.length();j++){
-            if(str2[i]==str2[j]){
-                count2++;
-            }
-        }
-
-        if(count1!=count2){
-            anagram=false;
-            break;
-        }
-        else{
-            anagram=true;
-        }
-    }
-    if(anagram){cout<<"Anagram";}
-    return 0;
-}*/
-
 // most frequent char
 /*#include<iostream>
 #include<string>
@@ -561,7 +519,7 @@ int main(){
     return 0;
 }*/
 // remove duplicate character
-#include<iostream>
+/*#include<iostream>
 #include<string>
 using namespace std;
 int main(){
@@ -577,4 +535,4 @@ int main(){
     }
     cout<<str<<endl;
     return 0;
-}
+}*/
